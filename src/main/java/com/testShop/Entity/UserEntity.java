@@ -2,14 +2,26 @@ package com.testShop.Entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.testShop.DTO.Role;
-import jakarta.persistence.*;
-import lombok.ToString;
+
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 import org.hibernate.Hibernate;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Сущность пользователя
+ */
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "users")
+@Entity
 public class UserEntity {
     /**
      * id пользователя
